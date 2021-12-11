@@ -6,6 +6,80 @@
     <title>@ViewData["Title"] - YNOT.NFT</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        /* Обнуляю отступы и убираю маркеры у списков. */
+        ul, li {
+            margin: 10;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        /* Задаю параметры для основного, родительского блока, меню выпадающего списка. */
+        #menu {
+            display: block;
+            position: absolute;
+            top: 16.9px;
+            left: 490px;
+        }
+
+        #menu1 {
+            display: block;
+            position: absolute;
+            top: 16.9px;
+            left: 575px;
+        }
+
+        /* Задаю стили для блоков выпадающего списка. */
+        #menu > li {
+            display: inline-block;
+            height: 20px;
+            /* Считаем координаты относительно исходного места. */
+            position: relative;
+        }
+
+            /* Задаю стили, чтобы скрыть дочерние блоки выпадающего списка. Ну и немного украшаю. */
+            #menu > li > ul {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                display: none;
+                background-color: white;
+                border-radius: 5px;
+                width: 185px;
+                font-size: 14px;
+                padding: 10 0 10 10;
+            }
+
+            /* Так я делаю прежде скрытую часть видимой — при наведении курсора. */
+            #menu > li:hover > ul {
+                display: block;
+            }
+        /* Задаю стили для блоков выпадающего списка. */
+        #menu1 > li {
+            display: inline-block;
+            height: 20px;
+            /* Считаем координаты относительно исходного места. */
+            position: relative;
+        }
+
+            /* Задаю стили, чтобы скрыть дочерние блоки выпадающего списка. Ну и немного украшаю. */
+            #menu1 > li > ul {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                display: none;
+                background-color: white;
+                border-radius: 5px;
+                width: 185px;
+                font-size: 14px;
+                padding: 10 0 10 10;
+            }
+
+            /* Так я делаю прежде скрытую часть видимой — при наведении курсора. */
+            #menu1 > li:hover > ul {
+                display: block;
+            }
+    </style>
 </head>
 <body>
     <header>
@@ -21,12 +95,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/AboutUs">About Us</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Collections">Collections</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Metaverse">Metaverse</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/BestTokens">Best Tokens</a>
                         </li>
@@ -35,6 +104,29 @@
                         </li>
                         <li class="nav-link">
                             <a href="http://ynotnftforum.azurewebsites.net/">Forum</a>
+                        </li>
+                    </ul>
+                    <ul id="menu">
+                        <li>
+                            <a href="https://ynotnft.azurewebsites.net/metaverse">Metaverse</a>
+                            <ul>
+                                <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Sportsmen</a></li>
+                                <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">RetroCars</a></li>
+                                <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Monopoly</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="menu1">
+                        <li>
+                            <a href="https://ynotnft.azurewebsites.net/collections">Collections</a>
+                            <ul>
+                                <li><a href="https://opensea.io/collection/pixels-monopoly">Pixels & Monopoly</a></li>
+                                <li><a href="https://opensea.io/collection/pixels-and-sportsmen">Pixels & Sportsmen</a></li>
+                                <li><a href="https://ynotnft.azurewebsites.net/error">RetroCars</a></li>
+                                <li><a href="https://opensea.io/collection/scary-me">Scary Me</a></li>
+                                <li><a href="https://opensea.io/collection/cyprus-glasses">Cyprus & Glasses</a></li>
+                                <li><a href="https://opensea.io/collection/pixels-companies">Pixels & Companies</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -49,7 +141,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - Ivan Ivanou | Contact Us: <a href="mailto: janisivanov@icloud.com">Send Email</a> | <a href="https://instagram.com/ynot.nft?utm_medium=copy_link">Instagram</a> | <a href="https://github.com/janisivanoov">GitHub</a>
+            &copy; 2021 - Ivan Ivanou | Contact Us: <a href="mailto: janisivanov@icloud.com">Send Email</a> | <a href="https://instagram.com/ynot.nft?utm_medium=copy_link">Instagram</a>
         </div>
     </footer>
 
