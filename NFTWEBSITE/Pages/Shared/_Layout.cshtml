@@ -7,72 +7,58 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <style>
-        /* Обнуляю отступы и убираю маркеры у списков. */
-        ul, li {
-            margin: 0;
+        ul.ddropdownn li { /* Считаем координаты относительно исходного места. */
+            position: relative;
+        }
+
+        ul.ddropdownn, ul.ddropdownn-inside {
+            /* Отступы на нуле. */
             padding: 0;
+            /* Маркеры уберем. */
             list-style-type: none;
         }
-        /* Задаю параметры для основного, родительского блока, меню выпадающего списка. */
-        #menu {
-            display: block;
+
+        ul.ddropdownn-inside {
+            /* Спрячем дочерние элементы выпадающего списка. */
+            left: -9999px;
             position: absolute;
-            top: 16.9px;
-            left: 365px;
         }
 
-        #menu1 {
-            display: block;
-            position: absolute;
-            top: 17px;
-            left: 270px;
+        ul.ddropdownn li.ddropdownn-top {
+            /* Небольшой отступ. */
+            margin: 0 1px 0 0;
+            /* Выравнивание по левой стороне. */
+            float: left;
+            display: inline;
         }
 
-        /* Задаю стили для блоков выпадающего списка. */
-        #menu > li {
-            display: inline-block;
-            height: 20px;
-            /* Считаем координаты относительно исходного места. */
-            position: relative;
-        }
-            /* Задаю стили, чтобы скрыть дочерние блоки выпадающего списка. Ну и немного украшаю. */
-            #menu > li > ul {
-                position: absolute;
-                top: 20px;
-                left: 10px;
-                display: none;
-                background-color: white;
-                border-radius: 5px;
-                width: 185px;
-                font-size: 14px;
-                padding: 10 0 10 10;
-            }
-            /* Так я делаю прежде скрытую часть видимой — при наведении курсора. */
-            #menu > li:hover > ul {
+            ul.ddropdownn li.ddropdownn-top a {
+                /* Делаю элементы блочными. */
                 display: block;
+                /* Снова отступы. */
+                padding: 3px 10px 4px;
             }
-        /* Задаю стили для блоков выпадающего списка. */
-        #menu1 > li {
-            display: inline-block;
-            height: 20px;
-            /* Считаем координаты относительно исходного места. */
-            position: relative;
+
+        ul.ddropdownn a.ddropdownn-top { /* Цвет фона. */
+            background: #efefef;
         }
-            /* Задаю стили, чтобы скрыть дочерние блоки выпадающего списка. Ну и немного украшаю. */
-            #menu1 > li > ul {
-                position: absolute;
-                top: 20px;
-                left: 10px;
-                display: none;
-                background-color: white;
-                border-radius: 5px;
-                width: 185px;
-                font-size: 14px;
-                padding: 10 0 10 10;
+
+            ul.ddropdownn a.ddropdownn-top:hover { /* Отступы. */
+                padding: 3px 10px 4px;
             }
-            /* Так я делаю прежде скрытую часть видимой — при наведении курсора. */
-            #menu1 > li:hover > ul {
-                display: block;
+
+        ul.ddropdownn li.ddropdownn-top:hover .ddropdownn-inside {
+            left: 0;
+            /* Делаю элементы блочными. */
+            display: block;
+        }
+
+        ul.ddropdownn .ddropdownn-inside { /* Цвет фона. */
+            background: #ffffff;
+        }
+
+            ul.ddropdownn .ddropdownn-inside a:hover { /* Цвет фона изменится при наведении. */
+                background: #efefef;
             }
     </style>
 </head>
@@ -87,40 +73,45 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            ㅤㅤㅤㅤㅤㅤ
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/AboutUs">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/News">News</a>
-                        </li>
-                        <li class="nav-link">
-                            <a href="http://ynotnftforum.azurewebsites.net/">Forum</a>
-                        </li>
-                    </ul>
-                    <ul id="menu1">
-                        <li>
-                            <a href="https://ynotnft.azurewebsites.net/OurProjects">Our Projects</a>
-                            <ul>
-                                <li><strong>Collections</strong></li>
-                                <li><a href="https://opensea.io/collection/pixels-monopoly">Pixels & Monopoly</a></li>
-                                <li><a href="https://opensea.io/collection/pixels-and-sportsmen">Pixels & Sportsmen</a></li>
-                                <li><a href="https://opensea.io/collection/pixels-and-retro-cars">Pixels & Retro Cars</a></li>
-                                <li><a href="https://opensea.io/collection/scary-me">Scary Me</a></li>
-                                <li><a href="https://opensea.io/collection/cyprus-glasses">Cyprus & Glasses</a></li>
-                                <li><a href="https://opensea.io/collection/pixels-companies">Pixels & Companies</a></li>
-                                <li><strong>Recently Added Tokens</strong></li>
-                                <li><a href="https://ynotnft.azurewebsites.net/Recently_Added">Recently Added Tokens</a></li>
-                                <li><strong>Best Tokens</strong></li>
-                                <li><a href="http://ynotnft.azurewebsites.net/BestTokens">Best Tokens</a></li>
-                                <li><strong>Metaverse</strong></li>
-                                <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Sportsmen</a></li>
-                                <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Retro Cars</a></li>
-                                <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Monopoly</a></li>
-                            </ul>
-                        </li>
+                        <ul class="ddropdownn">
+
+                            <li class="ddropdownn-top">
+                                <a class="ddropdownn-top" href="https://ynotnft.azurewebsites.net/AboutUs">About Us</a>
+                            </li>
+
+                            <li class="ddropdownn-top">
+                                <a class="ddropdownn-top" href="https://ynotnft.azurewebsites.net/collections">Collections</a>
+                                <ul class="ddropdownn-inside">
+                                    <li><a href="https://opensea.io/collection/scary-me">Scary Me</a></li>
+                                    <li><a href="https://opensea.io/collection/cyprus-glasses">Cyprus & Glasses</a></li>
+                                    <li><a href="https://opensea.io/collection/pixels-companies">Pixels & Companies</a></li>
+                                    <li><a href="https://opensea.io/collection/pixels-monopoly">Pixels & Monopoly</a></li>
+                                    <li><a href="https://opensea.io/collection/pixels-and-sportsmen">Pixels & Sportsmen</a></li>
+                                    <li><a href="https://opensea.io/collection/pixels-and-retro-cars">Pixels & Retro Cars</a></li>
+                                    <li>ㅤ</li>
+                                    <li><a href="https://ynotnft.azurewebsites.net/Recently_Added">Recently Added Tokens</a></li>
+                                    <li>ㅤ</li>
+                                    <li><a href="http://ynotnft.azurewebsites.net/BestTokens">Best Tokens</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="ddropdownn-top">
+                                <a class="ddropdownn-top" href="https://ynotnft.azurewebsites.net/metaverse">Metaverse</a>
+                                <ul class="ddropdownn-inside">
+                                    <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Monopoly</a></li>
+                                    <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Sportsmen</a></li>
+                                    <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Retro Cars</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="ddropdownn-top">
+                                <a class="ddropdownn-top" href="https://ynotnft.azurewebsites.net/News">News</a>
+                            </li>
+
+                            <li class="ddropdownn-top">
+                                <a class="ddropdownn-top" href="http://ynotnftforum.azurewebsites.net/">Forum</a>
+                            </li>
+                        </ul>
                     </ul>
                 </div>
             </div>
