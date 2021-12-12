@@ -9,24 +9,23 @@
     <style>
         /* Обнуляю отступы и убираю маркеры у списков. */
         ul, li {
-            margin: 10;
+            margin: 0;
             padding: 0;
             list-style-type: none;
         }
-
         /* Задаю параметры для основного, родительского блока, меню выпадающего списка. */
         #menu {
             display: block;
             position: absolute;
             top: 16.9px;
-            left: 490px;
+            left: 365px;
         }
 
         #menu1 {
             display: block;
             position: absolute;
             top: 16.9px;
-            left: 575px;
+            left: 275px;
         }
 
         /* Задаю стили для блоков выпадающего списка. */
@@ -36,7 +35,6 @@
             /* Считаем координаты относительно исходного места. */
             position: relative;
         }
-
             /* Задаю стили, чтобы скрыть дочерние блоки выпадающего списка. Ну и немного украшаю. */
             #menu > li > ul {
                 position: absolute;
@@ -49,7 +47,6 @@
                 font-size: 14px;
                 padding: 10 0 10 10;
             }
-
             /* Так я делаю прежде скрытую часть видимой — при наведении курсора. */
             #menu > li:hover > ul {
                 display: block;
@@ -61,7 +58,6 @@
             /* Считаем координаты относительно исходного места. */
             position: relative;
         }
-
             /* Задаю стили, чтобы скрыть дочерние блоки выпадающего списка. Ну и немного украшаю. */
             #menu1 > li > ul {
                 position: absolute;
@@ -74,7 +70,6 @@
                 font-size: 14px;
                 padding: 10 0 10 10;
             }
-
             /* Так я делаю прежде скрытую часть видимой — при наведении курсора. */
             #menu1 > li:hover > ul {
                 display: block;
@@ -95,9 +90,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/AboutUs">About Us</a>
                         </li>
-
+                        <li class="nav-item">
+                            ㅤㅤㅤㅤㅤㅤ
+                        </li>
+                        <li>
+                            ㅤㅤㅤㅤㅤ
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/BestTokens">Best Tokens</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Recently_Added">Recently Added Tokens</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/News">News</a>
@@ -111,7 +114,7 @@
                             <a href="https://ynotnft.azurewebsites.net/metaverse">Metaverse</a>
                             <ul>
                                 <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Sportsmen</a></li>
-                                <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">RetroCars</a></li>
+                                <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Retro Cars</a></li>
                                 <li><a href="https://ynotnft.azurewebsites.net/metaversedevelop">Pixels & Monopoly</a></li>
                             </ul>
                         </li>
@@ -122,7 +125,7 @@
                             <ul>
                                 <li><a href="https://opensea.io/collection/pixels-monopoly">Pixels & Monopoly</a></li>
                                 <li><a href="https://opensea.io/collection/pixels-and-sportsmen">Pixels & Sportsmen</a></li>
-                                <li><a href="https://ynotnft.azurewebsites.net/error">RetroCars</a></li>
+                                <li><a href="https://opensea.io/collection/pixels-and-retro-cars">Pixels & Retro Cars</a></li>
                                 <li><a href="https://opensea.io/collection/scary-me">Scary Me</a></li>
                                 <li><a href="https://opensea.io/collection/cyprus-glasses">Cyprus & Glasses</a></li>
                                 <li><a href="https://opensea.io/collection/pixels-companies">Pixels & Companies</a></li>
@@ -138,7 +141,6 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - Ivan Ivanou | Contact Us: <a href="mailto: janisivanov@icloud.com">Send Email</a> | <a href="https://instagram.com/ynot.nft?utm_medium=copy_link">Instagram</a>
@@ -148,6 +150,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/google-translate.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
