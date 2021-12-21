@@ -3,11 +3,11 @@ using Microsoft.Extensions.Logging;
 
 namespace NFTWEBSITE.Pages
 {
-    public class ForumDevModel : PageModel
+    public class PixeliumDevModel : PageModel
     {
-        private readonly ILogger<ForumDevModel> _logger;
+        private readonly ILogger<PixeliumDevModel> _logger;
 
-        public ForumDevModel(ILogger<ForumDevModel> logger)
+        public PixeliumDevModel(ILogger<PixeliumDevModel> logger)
         {
             _logger = logger;
         }
